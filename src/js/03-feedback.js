@@ -22,7 +22,11 @@ function onFormSubmit(event) {
     event.preventDefault();
 
     const { elements: { email, message } } = event.currentTarget;
-    console.log(email.value, message.value);
+    console.log({ email, message });
+
+    if (!email.value || !message.value) {
+        return alert('Please fill in all fields!');
+    }
 
     localStorage.removeItem('LOCALSTOR_KEY');
     event.currentTarget.reset();
