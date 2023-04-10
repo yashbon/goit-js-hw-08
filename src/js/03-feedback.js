@@ -22,7 +22,7 @@ function onFormSubmit(event) {
     event.preventDefault();
 
     const { elements: { email, message } } = event.currentTarget;
-    console.log({ email, message });
+    console.log({ email: email.value, message: message.value });
 
     if (!email.value || !message.value) {
         return alert('Please fill in all fields!');
